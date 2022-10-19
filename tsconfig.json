@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    // Ensure that .d.ts files are created by tsc, but not .js files
+    "declaration": true,
+    // "emitDeclarationOnly": true,
+    // Ensure that Babel can safely transpile files in the TypeScript project
+    "isolatedModules": false,
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "paths": {
+      "@JavaScript/*": ["./code/JavaScript/*"]
+    },
+    "esModuleInterop": true
+  },
+  "include": [
+    "code/**/*.ts",
+    "tests/**/*.test.ts"
+  ]
+}
