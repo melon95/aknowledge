@@ -1,4 +1,4 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from '@jest/globals'
 import newObj from '@JavaScript/new'
 
 describe('sum module', () => {
@@ -11,9 +11,8 @@ describe('sum module', () => {
     }
     const value = "i'm value"
     const ins = newObj(Fn, value)
-    expect(ins).toEqual({value});
-    expect(Object.getPrototypeOf(ins)).toBe(Fn.prototype);
-    expect(ins.getValue()).toBe(ins.value);
-  });
-});
-
+    expect(ins).toEqual({ value })
+    expect(Object.getPrototypeOf(ins)).toBe(Fn.prototype)
+    expect(ins.getValue()).toBe(ins.value)
+  })
+})
