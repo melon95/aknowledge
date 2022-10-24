@@ -1,14 +1,15 @@
 import { describe, expect, test } from '@jest/globals'
 import '@JavaScript/call'
 
-describe('sum module', () => {
+describe('call module', () => {
   test('call function', () => {
-    function callFn() {
-      return this.value
+    function callFn(name: string) {
+      return this.value + name
     }
     const context = {
-      value: 'i am context value'
+      value: 'i am context, say: '
     }
-    expect(callFn.call(context)).toBe(context.value)
+    const helloWorld = 'hello world'
+    expect(callFn.call(context, helloWorld)).toBe(context.value + helloWorld)
   })
 })
