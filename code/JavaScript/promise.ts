@@ -16,9 +16,7 @@ const resolvePromise = (promise2, x, resolve, reject) => {
   }
   if (x instanceof NewPromise) {
     // 2.3.2
-    x.then((y) => {
-      resolvePromise(promise2, y, resolve, reject)
-    }, reject)
+    x.then(resolve, reject)
     return
   } else if (typeof x === 'function' || (typeof x === 'object' && x !== null)) {
     let isExecuted = false
