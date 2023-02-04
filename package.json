@@ -26,5 +26,8 @@
     "test": "jest",
     "tsc": "tsc",
     "promise": "pnpm tsc && promises-aplus-tests ./dist/code/JavaScript/promise"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
   }
 }
