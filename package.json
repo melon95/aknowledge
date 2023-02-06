@@ -25,9 +25,10 @@
   "scripts": {
     "test": "jest",
     "tsc": "tsc",
-    "promise": "pnpm tsc && promises-aplus-tests ./dist/code/JavaScript/promise"
+    "promise": "pnpm tsc && promises-aplus-tests ./dist/JavaScript/promise2"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^18.2.0"
   }
 }
