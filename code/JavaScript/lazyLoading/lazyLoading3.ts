@@ -1,6 +1,6 @@
 const imgLazyLoad = function () {
   const imgList = document.querySelectorAll('img[data-src]')
-  imgList.forEach((img, index) => {
+  imgList.forEach((img: HTMLImageElement) => {
     let rect = img.getBoundingClientRect()
     if (rect.top < window.innerHeight) {
       img.src = img.dataset.src

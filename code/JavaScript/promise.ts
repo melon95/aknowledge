@@ -104,7 +104,7 @@ class NewPromise {
     }
     if (this.status === PEDING) {
       // 如果状态还是pending，则存储函数
-      const promise2 = new Promise((resolve, reject) => {
+      const promise2 = new NewPromise((resolve, reject) => {
         this.fulfilledFnList.push((val) => {
           try {
             const x = onFulfilled(val)

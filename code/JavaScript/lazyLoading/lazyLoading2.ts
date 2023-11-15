@@ -1,11 +1,12 @@
-const intersectionObserver = new IntersectionObserver((entries) => {
+const intersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
   entries.forEach((item) => {
     // 如果 intersectionRatio 为 0，则目标在视野外，
     // 我们不需要做任何事情。
     if (item.intersectionRatio <= 0) return
     if (item.isIntersecting) {
-      item.target.src = item.target.dataset.src
-      intersectionObserver.unobserve(item)
+      const image = item.target as HTMLImageElement;
+      image.src = image.dataset.src
+      intersectionObserver.unobserve(image)
     }
   })
 })
