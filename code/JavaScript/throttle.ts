@@ -1,11 +1,10 @@
 function throttle(fn, delay: number) {
-  let timeId
-  return () => {
-    if (!timeId) {
-      timeId = setTimeout((...args) => {
-        timeId = null
-        fn.apply(null, args)
-      }, delay)
+  let lastCallTime = 0
+  return function (...args) {
+    const now = Date.now()
+    if (now - lastCallTime >= delay) {
+      lastCallTime = now
+      fn.apply(this, args)
     }
   }
 }

@@ -1,12 +1,20 @@
-function debounce1(fn, delay: number) {
+function _debounce(fn, delay: number) {
   let timeId
-  return () => {
-    if (timeId) {
-      clearTimeout(timeId)
+  let lastExecuteTime = 0
+  return function (...args) {
+    const now = Date.now()
+    const shouldExecuteImmediate = now - lastExecuteTime >= delay
+
+    if (shouldExecuteImmediate) {
+      lastExecuteTime = now
+      fn.apply(this, args)
+      return
     }
-    timeId = setTimeout((...args) => {
+
+    clearTimeout(timeId)
+    timeId = setTimeout(() => {
       timeId = null
-      fn.apply(null, args)
+      fn.apply(this, args)
     }, delay)
   }
 }
